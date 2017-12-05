@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FilmThunder.Models.movie>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.filmID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genreID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.filmName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genreName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.filmID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.certID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genreID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.filmName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.certName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genreName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
