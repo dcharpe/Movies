@@ -15,6 +15,13 @@ namespace FilmThunder.Controllers
             ModelState.Clear();
             return View(dbhandle.GetAllMovie());
         }
+
+       public ActionResult DisplayAll()
+        {
+            MovieDBHandler dbhandle = new MovieDBHandler();
+            ModelState.Clear();
+            return View(dbhandle.DisplayAllMovies());
+        }
         // GET: Movie
         public ActionResult Index()
         {

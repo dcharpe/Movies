@@ -5,15 +5,7 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.filmID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.certID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.genreID)
-        </th>
+      
         <th>
             @Html.DisplayNameFor(model => model.filmName)
         </th>
@@ -28,15 +20,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.filmID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.certID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.genreID)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.filmName)
         </td>

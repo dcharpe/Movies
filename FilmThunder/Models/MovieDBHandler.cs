@@ -40,11 +40,49 @@ namespace FilmThunder.Models
                         filmName = Convert.ToString(dr["Film Name"]),
                         certName = Convert.ToString(dr["Rating Name"]),
                         genreName = Convert.ToString(dr["Genre Name"]),
+                        
 
 
                     });
             }
             return Movielist;
         }
+       
+        public List<allmovies> DisplayAllMovies()
+        {
+            Connection();
+            List<allmovies> Movielist = new List<allmovies>();
+
+            SqlCommand cmd = new SqlCommand("filmsearch", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter am = new SqlDataAdapter(cmd);
+            DataTable af = new DataTable();
+
+            con.Open();
+            am.Fill(af);
+            con.Close();
+
+            foreach (DataRow dr in af.Rows)
+            {
+
+                Movielist.Add(
+                    new allmovies
+                    {
+                        filmName = Convert.ToString(dr["Film Name"]),
+                        certName = Convert.ToString(dr["Rating Name"]),
+                        genreName = Convert.ToString(dr["Genre Name"]),
+                        producerFirstName = Convert.ToString(dr["producerFirstName"]),
+                        producerLastName = Convert.ToString(dr["producerLastName"]),
+                        actorFirstName = Convert.ToString(dr["actorFirstName"]),
+                        actorLastName = Convert.ToString(dr["actorLastName"]),
+                        roleName = Convert.ToString(dr["roleName"]),
+                        /*filmRelease = date,  */
+
+
+                    });
+            }
+            return Movielist;
+        } 
+
     }
 }
